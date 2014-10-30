@@ -2554,7 +2554,7 @@
          * @return {Boolean}
          */
         WebAudio.prototype.isPlayback = function () {
-            return !!this.source && !!this.state.time.playback && !this.state.time.pause && (this.source.playbackState === 1 || this.source.playbackState === 2);
+            return !!this.source && !!this.state.time.playback && !this.state.time.pause;
         };
 
         /**
