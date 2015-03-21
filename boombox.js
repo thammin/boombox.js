@@ -1672,6 +1672,14 @@
             } catch (e) {
                 this.logger.error('Set currentTime.', e.message);
             }
+
+            // currentTime couldn't set to 0 on some old Android Chrome
+            // reload src to reset the currentTime to 0
+            if (t === 0 && this.$el.currentTime !== t) {
+                this.$el.pause();
+                this.$el.src = this.$el.src;
+            }
+
             return this;
         };
 
